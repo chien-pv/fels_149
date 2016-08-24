@@ -29,4 +29,15 @@ en:
       title: "Elearning System"
       about: "About"
       contact: "Contact"
-
+  user:
+    signup: "Create my account"
+    passconfir: "Confirm your password"
+    gender:
+      female: "Female"
+      male: "Male"
+      select: "Select"
+  flash:
+    success:
+      Signup: "Sign up successfully!"
+  error: "error"
+  message_err: "The form contains"
