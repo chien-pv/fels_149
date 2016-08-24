@@ -21,3 +21,12 @@
 
 en:
   hello: "Hello world"
+  static_page:
+      home: "Home"
+      signup: "Sign up"
+      signin: "Sign in"
+      elearning: "Elearning"
+      title: "Elearning System"
+      about: "About"
+      contact: "Contact"
+
