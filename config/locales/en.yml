@@ -51,3 +51,11 @@ en:
     new:
       login: "Log In"
     login_fail: "Email or password is invalid."
+  word:
+    index:
+      title: "List Word"
+      filter: "Filter words"
+      search: "Search"
+      all: "All"
+      not_learned: "Not learned"
+      learned: "Learned"
