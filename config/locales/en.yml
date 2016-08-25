@@ -71,3 +71,6 @@ en:
       all: "All"
       not_learned: "Not learned"
       learned: "Learned"
+      download_word: "Download Words"
+      pdf: "PDF"
+      xlsx: "XLSX"

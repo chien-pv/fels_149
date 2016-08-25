@@ -1,0 +1,17 @@
+<div style=" text-align: center;">
+  <h2 class="text-center"><%= t "word.index.title" %></h2>
+  <div class="table-word">
+    <% @words.in_groups_of(Settings.colume_export, false)
+      .each do |group_word| %>
+      <div class="row row-table-word">
+        <% group_word.each do |word| %>
+          <div style="float: left; width: 25%;"
+            class="text-center word-content">
+            <%= word.content %>
+          </div>
+        <% end %>
+      </div>
+      <br>
+    <% end %>
+  </div>
+</div>
