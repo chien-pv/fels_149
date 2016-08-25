@@ -1,7 +1,10 @@
 @import "bootstrap-sprockets";
 @import "bootstrap";
-#header a{
+#header {
   color: #FFFFFF;
+  a{
+    color: #FFFFFF;
+  }
 }
 
 #header  nav{
@@ -22,7 +25,7 @@
 }
 
 #content {
-  padding: 60px 0px;
+  height: 60px
 }
 /*footer*/
 #footer {
@@ -33,10 +36,16 @@
   bottom: 0;
   width: 100%;
 }
+
 #footer a{
   color: #FFFFFF;
   text-transform: uppercase;
 }
+
 #footer ul{
   padding-top: 5px;
+}
+
+.page-content{
+  padding-top: 100px;
 }

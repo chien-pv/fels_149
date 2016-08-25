@@ -20,13 +20,26 @@
               <%=t "static_page.home" %></i>
             <% end %>
           </li>
-          <%= link_to signup_path, class: "btn btn-danger navbar-btn" do %>
-            <i class="glyphicon glyphicon-plus-sign">
-            <%= t "static_page.signup" %></i>
-          <% end %>
-          <%= link_to "#", class: "btn btn-info navbar-btn" do %>
-            <i class="glyphicon glyphicon-log-in">
-            <%= t "static_page.signin"%></i>
+          <% if current_user %>
+            <%= link_to session_path("current"), class: "btn btn-danger navbar-btn", method: "delete" do %>
+              <i class="glyphicon glyphicon-log-out">
+              <%= t "static_page.logout" %></i>
+            <% end %>
+
+            <%= link_to "#", class: "btn btn-info navbar-btn", method: "delete" do %>
+              <i class="glyphicon glyphicon-cog">
+              <%=current_user.name %></i>
+            <% end %>
+
+          <% else %>
+            <%= link_to signup_path, class: "btn btn-danger navbar-btn" do %>
+              <i class="glyphicon glyphicon-plus-sign">
+               <%= t "static_page.signup" %></i>
+            <% end %>
+            <%= link_to new_session_path, class: "btn btn-info navbar-btn" do %>
+              <i class="glyphicon glyphicon-log-in">
+              <%= t "static_page.signin" %></i>
+            <%end%>
           <% end %>
         </ul>
       </div>
