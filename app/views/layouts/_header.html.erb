@@ -10,7 +10,8 @@
           <span class="icon-bar"></span>
         </button>
         <span><img alt="Icon" src="/assets/Framgia_icon.png"/></span>
-        <%= link_to t("static_page.elearning"), root_path, class: "bar-brand" %>
+        <%= link_to t("static_page.elearning"), root_path,
+          class: "bar-brand" %>
       </div>
       <div class="collapse navbar-collapse navbar-ex1-collapse">
         <ul class="nav navbar-nav navbar-right">
@@ -20,17 +21,25 @@
               <%=t "static_page.home" %></i>
             <% end %>
           </li>
-          <% if current_user %>
-            <%= link_to session_path("current"), class: "btn btn-danger navbar-btn", method: "delete" do %>
+          <% if logged_in? %>
+            <%= link_to session_path("current"), class: "btn btn-danger
+              navbar-btn", method: "delete" do %>
               <i class="glyphicon glyphicon-log-out">
               <%= t "static_page.logout" %></i>
             <% end %>
-
-            <%= link_to "#", class: "btn btn-info navbar-btn", method: "delete" do %>
-              <i class="glyphicon glyphicon-cog">
-              <%=current_user.name %></i>
-            <% end %>
-
+            <span class="dropdown dropdown-user">
+              <%= link_to "#", class: "btn btn-info navbar-btn",
+                data: {toggle: "dropdown"} do %>
+                <i class="glyphicon glyphicon-cog">
+                <%=current_user.name %></i>
+              <% end %>
+              <ul class="dropdown-menu">
+                <li><%= link_to t("static_page.profile"), current_user %></li>
+                <li class="divider"></li>
+                <li><%= link_to t("static_page.settings"), edit_user_path(current_user) %>
+                </li>
+              </ul>
+            </span>
           <% else %>
             <%= link_to signup_path, class: "btn btn-danger navbar-btn" do %>
               <i class="glyphicon glyphicon-plus-sign">

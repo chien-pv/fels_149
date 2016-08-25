@@ -10,11 +10,12 @@
   <%= f.password_field :password_confirmation, class: "form-control" %>
   <%= f.label :phone %>
   <%= f.text_field :phone, class: "form-control" %>
-  <%= f.label :gerder %>
+  <%= f.label :gender %>
   <%= f.select :gender,[[t("user.gender.female"), true],
     [t("user.gender.male"), false]],
-    prompt: t("user.gender.select"), required: true, placeholder: "Gender",
+    prompt: t("user.gender.select"), required: true,
+    placeholder: t("user.gender_holder"),
     class: "form-control" %>
-  <%= f.submit t("user.signup"), class: "btn btn-primary" %>
-
+  <%= f.submit logged_in? ? t("user.save") : t("user.signup"),
+    class: "btn btn-primary" %>
 <% end %>
