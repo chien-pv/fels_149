@@ -37,9 +37,14 @@ en:
       female: "Female"
       male: "Male"
       select: "Select"
+    activity: "Activities"
+    word: "Word"
+    lesson: "Lesson"
   flash:
     success:
       Signup: "Sign up successfully!"
+    danger:
+      user_not_exist: "User not exist"
   error: "error"
   message_err: "The form contains"
   sessions:
