@@ -5,8 +5,14 @@
   a{
     color: #FFFFFF;
   }
+  a:hover, .container:hover
+  {
+    background-color: #3498db;
+  }
 }
-
+.dropdown-menu {
+  background-color: #34495e;
+}
 #header  nav{
   background:#34495e;
   padding-top:10px;
@@ -48,4 +54,13 @@
 
 .page-content{
   padding-top: 100px;
+}
+.gravatar {
+  float: left;
+  margin-right: 10px;
+}
+
+.gravatar_edit {
+  padding-top: 10px;
+  padding-bottom: 200px;
 }

@@ -22,14 +22,17 @@
 en:
   hello: "Hello world"
   static_page:
-      home: "Home"
-      signup: "Sign up"
-      signin: "Sign in"
-      logout: "Logout"
-      elearning: "Elearning"
-      title: "Elearning System"
-      about: "About"
-      contact: "Contact"
+    home: "Home"
+    signup: "Sign up"
+    signin: "Sign in"
+    logout: "Logout"
+    elearning: "Elearning"
+    title: "Elearning System"
+    about: "About"
+    contact: "Contact"
+    edit_user: "User update"
+    settings: "Settings"
+    profile: "Profile"
   user:
     signup: "Create my account"
     passconfir: "Confirm your password"
@@ -37,12 +40,17 @@ en:
       female: "Female"
       male: "Male"
       select: "Select"
+      gender_holder: "Gender"
     activity: "Activities"
     word: "Word"
     lesson: "Lesson"
+    update: "Update your profile"
+    save: "Save changes"
+    avatar: "Change avatar"
   flash:
     success:
       Signup: "Sign up successfully!"
+      update: "Profile updated successfully"
     danger:
       user_not_exist: "User not exist"
   error: "error"

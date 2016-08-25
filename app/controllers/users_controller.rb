@@ -1,10 +1,7 @@
 class UsersController < ApplicationController
+  before_action :load_user, only: [:edit, :update, :show]
+
   def show
-    @user = User.find_by id: params[:id]
-    if @user.nil?
-      flash[:danger] = t "flash.danger.user_not_exist"
-      redirect_to root_url
-    end
   end
 
   def new
@@ -15,13 +12,34 @@ class UsersController < ApplicationController
     @user = User.new user_params
     if @user.save
       flash[:success] = t "flash.success.Signup"
+      login @user
       redirect_to @user
     else
       render :new
     end
   end
 
+  def edit
+  end
+
+  def update
+    if @user.update_attributes user_params
+      flash[:success] = t "flash.success.update"
+      redirect_to @user
+    else
+      render :edit
+    end
+  end
+
   private
+
+  def load_user
+    @user = User.find_by id: params[:id]
+    if @user.nil?
+      flash[:danger] = t "flash.danger.user_not_exist"
+      redirect_to root_url
+    end
+  end
 
   def user_params
     params.require(:user).permit :name, :email, :password,
