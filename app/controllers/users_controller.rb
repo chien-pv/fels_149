@@ -37,14 +37,6 @@ class UsersController < ApplicationController
 
   private
 
-  def load_user
-    @user = User.find_by id: params[:id]
-    if @user.nil?
-      flash[:danger] = t "flash.danger.user_not_exist"
-      redirect_to root_url
-    end
-  end
-
   def user_params
     params.require(:user).permit :name, :email, :password,
       :password_confirmation, :phone, :gender

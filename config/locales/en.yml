@@ -51,6 +51,11 @@ en:
     no_result: "No results"
     search: "Search User"
     all: "All users"
+    follow: "Follow"
+    unfollow: "UnFolow"
+    view_profile: "View my profile"
+    following_title: "Following"
+    follower_title: "Followers"
   flash:
     success:
       Signup: "Sign up successfully!"
