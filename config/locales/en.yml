@@ -74,8 +74,22 @@ en:
       filter: "Filter words"
       search: "Search"
       all: "All"
-      not_learned: "Not learned"
+      not_learn: "Not learned"
       learned: "Learned"
       download_word: "Download Words"
       pdf: "PDF"
       xlsx: "XLSX"
+  admin:
+    users:
+      index:
+        title: "Listing users"
+        name: "Name"
+        email: "Email"
+        phone: "Phone"
+        gender: "Gender"
+        avatar: "Avatar"
+        delete: "Delete"
+        number_order: "No."
+      destroy:
+        success: "User deleted successfully"
+        danger: "User delete errors"

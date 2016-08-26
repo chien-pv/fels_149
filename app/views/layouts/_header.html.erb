@@ -15,19 +15,37 @@
       </div>
       <div class="collapse navbar-collapse navbar-ex1-collapse">
         <ul class="nav navbar-nav navbar-right">
-          <li>
-            <%= link_to root_path do %>
-              <i class="glyphicon glyphicon-home">
-              <%=t "static_page.home" %></i>
-            <% end %>
-          </li>
           <% if logged_in? %>
-            <li>
-              <%= link_to users_path do %>
-                <i class="glyphicon glyphicon-user">
-                <%=t "static_page.all_user" %></i>
+             <% if current_user.is_admin? %>
+               <li>
+                <%= link_to admin_root_path do %>
+                  <i class="glyphicon glyphicon-home">
+                  <%=t "static_page.home" %></i>
+                <% end %>
+                </li>
+                <li>
+                  <%= link_to t("static_page.users"), admin_users_path %>
+                </li>
+                <li>
+                  <%= link_to t("static_page.category"), "#" %>
+                </li>
+                <li>
+                  <%= link_to t("static_page.word"), "#" %>
+                </li>
+              <% else %>
+                <li>
+                  <%= link_to root_path do %>
+                    <i class="glyphicon glyphicon-home">
+                    <%=t "static_page.home" %></i>
+                  <% end %>
+                </li>
+                <li>
+                  <%= link_to users_path do %>
+                    <i class="glyphicon glyphicon-user">
+                    <%=t "static_page.all_user" %></i>
+                  <% end %>
+                </li>
               <% end %>
-            </li>
             <%= link_to session_path("current"), class: "btn btn-danger
               navbar-btn", method: "delete" do %>
               <i class="glyphicon glyphicon-log-out">

@@ -7,7 +7,7 @@ class SessionsController < ApplicationController
     if user && user.authenticate(params[:password])
       login user
       params[:remember] == "1" ? remember(user) : forget(user)
-      redirect_to user_path(user)
+      render_root_page_login user
     else
       flash.alert = t "sessions.login_fail"
       redirect_to new_session_path

@@ -17,6 +17,7 @@ class User < ActiveRecord::Base
   validates :password, presence: true, length: {minimum: 6}, allow_nil: true
 
   scope :search, -> q {where "name LIKE ?", "%#{q}%" if q.present?}
+  scope :not_admin, -> {where is_admin: false}
 
   class << self
     def digest string
