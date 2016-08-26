@@ -1,0 +1,7 @@
+wb = xlsx_package.workbook
+wb.add_worksheet(name: "Payments") do |sheet|
+  @words.in_groups_of(4, false).each do |word|
+    sheet.add_row [word[0].try(:content), word[1]
+      .try(:content), word[2].try(:content), word[3].try(:content)]
+  end
+end

@@ -10,17 +10,24 @@
       </div>
     </div>
   </div>
-    <div class="table-word">
-      <% @words.in_groups_of(Settings.word_colume, false).
-        each do |group_word| %>
-        <div class="row row-table-word">
-          <% group_word.each do |word| %>
-            <div class="col-md-4 text-center word-content">
-              <%= word.content %>
-            </div>
-          <% end %>
-        </div>
-      <% end %>
-    </div>
+
+  <div id="pull-right">
+    <label> <%= t "word.index.download_word" %> </label>
+    <%= link_to t("word.index.pdf"), words_path(@words, format: :pdf) %> |
+    <%= link_to t("word.index.xlsx"), words_path(format: :xlsx) %>
+  </div>
+
+  <div class="table-word">
+    <% @words.in_groups_of(Settings.word_colume, false)
+      .each do |group_word| %>
+      <div class="row row-table-word">
+        <% group_word.each do |word| %>
+          <div class="col-md-4 text-center word-content">
+            <%= word.content %>
+          </div>
+        <% end %>
+      </div>
+    <% end %>
+  </div>
   <%= will_paginate @words %>
 </div>
