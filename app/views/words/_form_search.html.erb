@@ -2,28 +2,20 @@
   <div class="row">
     <div class="col-md-3">
       <%= select_tag :category_id,
-        options_from_collection_for_select(@categories, :id, :name, 0),
-        class: "form-control", include_blank: "All" %>
+        options_from_collection_for_select(@categories, :id, :name,
+          params[:category_id]),
+          class: "form-control", include_blank: "All category" %>
     </div>
-    <div class="col-md-3">
-      <div class="col-md-2">
-        <%= radio_button_tag :check_learned, :learned %>
+    <% Settings.search_words.each do |key, check_learned| %>
+      <div class="col-md-3">
+        <div class="col-md-2">
+          <%= radio_button_tag :check_learned, check_learned,
+            params[:check_learned] == check_learned %>
+        </div>
+        <label><%= t "word.index.learned" %> </label>
       </div>
-      <label><%= t "word.index.learned" %> </label>
-    </div>
-    <div class="col-md-3">
-      <div class="col-md-2">
-        <%= radio_button_tag :check_learned, :not_learned %>
-      </div>
-      <label><%= t "word.index.not_learned" %></label>
-    </div>
-    <div class="col-md-3">
-      <div class="col-md-2">
-        <%= radio_button_tag :check_learned, :all %>
-      </div>
-      <label><%= t "word.index.all" %></label>
-    </div>
+    <% end %>
+    <%= submit_tag t("word.index.search"),
+      class: "btn btn-success col-md-2 col-md-offset-2" %>
   </div>
-  <%= submit_tag t("word.index.search"),
-    class: "btn btn-success col-md-2 col-md-offset-4" %>
 <% end %>
