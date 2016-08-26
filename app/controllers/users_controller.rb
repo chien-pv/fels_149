@@ -31,6 +31,10 @@ class UsersController < ApplicationController
     end
   end
 
+  def index
+    @users = User.search(params[:search]).paginate page: params[:page]
+  end
+
   private
 
   def load_user
