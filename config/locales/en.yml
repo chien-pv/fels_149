@@ -33,6 +33,7 @@ en:
     edit_user: "User update"
     settings: "Settings"
     profile: "Profile"
+    all_user: "users"
   user:
     signup: "Create my account"
     passconfir: "Confirm your password"
@@ -47,6 +48,9 @@ en:
     update: "Update your profile"
     save: "Save changes"
     avatar: "Change avatar"
+    no_result: "No results"
+    search: "Search User"
+    all: "All users"
   flash:
     success:
       Signup: "Sign up successfully!"
