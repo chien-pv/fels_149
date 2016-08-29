@@ -4,7 +4,7 @@ Rails.application.routes.draw do
   get "home" => "static_pages#home"
   get "signup"  => "users#new"
   resources :users
-
+  resources :relationships, only: [:create, :destroy, :show]
   resources :sessions, only: [:new, :create, :destroy]
   get "login", to: "sessions#new", as: "login"
   get "logout", to: "sessions#destroy", as: "logout"
