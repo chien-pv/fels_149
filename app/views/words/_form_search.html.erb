@@ -12,7 +12,7 @@
           <%= radio_button_tag :check_learned, check_learned,
             params[:check_learned] == check_learned %>
         </div>
-        <label><%= t "word.index.learned" %> </label>
+        <label><%= t "word.index.#{key}" %></label>
       </div>
     <% end %>
     <%= submit_tag t("word.index.search"),

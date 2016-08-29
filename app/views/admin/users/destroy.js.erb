@@ -1,0 +1,5 @@
+<% if @user.destroyed? %>
+  $('table#table-users tr#user-<%= @user.id%>').remove();
+<% end %>
+$('.flash-massage')
+  .replaceWith('<%= j render(:partial => "shared/flash_messages") %>');

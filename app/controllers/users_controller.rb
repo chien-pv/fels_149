@@ -1,5 +1,10 @@
 class UsersController < ApplicationController
+  before_action :authenticate!
   before_action :load_user, only: [:edit, :update, :show]
+
+  def index
+    @users = User.search(params[:search]).paginate page: params[:page]
+  end
 
   def show
   end
@@ -29,10 +34,6 @@ class UsersController < ApplicationController
     else
       render :edit
     end
-  end
-
-  def index
-    @users = User.search(params[:search]).paginate page: params[:page]
   end
 
   private

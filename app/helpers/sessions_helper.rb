@@ -37,7 +37,16 @@ module SessionsHelper
     @current_user = nil
   end
 
+
   def current_user? user
     user == current_user
+  end
+
+  def render_root_page_login user
+    if user.is_admin?
+      redirect_to admin_root_path
+    else
+      redirect_to user_path user
+    end
   end
 end

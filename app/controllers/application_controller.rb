@@ -11,4 +11,12 @@ class ApplicationController < ActionController::Base
       redirect_to root_url
     end
   end
+
+  def authenticate!
+    redirect_to root_url unless current_user
+  end
+
+  def authenticate_admin!
+    redirect_to root_url unless current_user.is_admin?
+  end
 end
