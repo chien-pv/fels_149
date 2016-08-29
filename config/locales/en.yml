@@ -60,6 +60,7 @@ en:
     success:
       Signup: "Sign up successfully!"
       update: "Profile updated successfully"
+      create: "create successfully!"
     danger:
       user_not_exist: "User not exist"
   error: "error"
@@ -93,3 +94,18 @@ en:
       destroy:
         success: "User deleted successfully"
         danger: "User delete errors"
+    categories:
+      index:
+        title: "Listing categories"
+        number_order: "No."
+        name: "Name"
+        description: "Description"
+        created_at: "Created at"
+        confirm: "Are you sure?"
+        new: "Add new"
+      search_form:
+        search: "Search categories"
+      new:
+        title: "Add new category"
+      form:
+        save: "Save"

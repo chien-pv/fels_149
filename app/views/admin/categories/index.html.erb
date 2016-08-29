@@ -1,0 +1,37 @@
+<div class="content-page-admin">
+  <h2 class="text-center"><%= t ".category" %></h2>
+  <%= render "search_form" %>
+    <div class="flash-massage"></div>
+    <div class="mg-bt-10 pull-right">
+      <%= link_to  t(".new"), new_admin_category_path,
+        class: "btn btn btn-primary" %>
+    </div>
+    <table class="table table-bordered" id="table-users">
+      <thead>
+        <tr>
+          <th><%= t ".number_order" %></th>
+          <th><%= t ".name" %></th>
+          <th><%= t ".description" %></th>
+          <th><%= t ".created_at" %></th>
+          <th></th>
+        </tr>
+      </thead>
+      <tbody>
+        <% @categories.each_with_index do |category, index| %>
+          <tr id="category-<%= category.id %>">
+            <td><%= index + 1 %></td>
+            <td><%= category.name %></td>
+            <td><%= category.description %></td>
+            <td><%= category.created_at.try(:strftime, "%m/%d/%Y") %></td>
+            <td class="text-center"><%= link_to admin_category_path(category),
+              method: :delete, remote: true,
+              data: {confirm: t(".confirm")} do %>
+                  <i class="text-danger glyphicon glyphicon-trash"> </i>
+                <% end %>
+            </td>
+          </tr>
+        <% end %>
+      </tbody>
+    </table>
+  <%= will_paginate @categories %>
+</div>
