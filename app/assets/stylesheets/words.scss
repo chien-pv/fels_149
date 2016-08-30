@@ -14,3 +14,20 @@
 .word-content{
   margin-top: 10px;
 }
+.admin-words {
+  .col-id {
+    width: 10%;
+  }
+  .col-content {
+    width: 35%;
+  }
+  .col-correct {
+    width: 40%;
+  }
+  .col-id {
+    action: 15%;
+  }
+}
+.btn-add-word {
+padding: 0px;
+}

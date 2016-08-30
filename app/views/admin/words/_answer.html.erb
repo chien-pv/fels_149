@@ -1,0 +1,12 @@
+<table class="table">
+    <tr>
+      <td><%= f.label :content, "#{t("admin.words.answer")}
+        #{f.options[:child_index] + 1}" %></td>
+      <td><%= f.text_field :content, class: "form-control" %></td>
+      <td>
+        <%= f.label :correct %>
+        <%= f.radio_button :is_correct, true, value: true,
+          class: "answers" %>
+      </td>
+    </tr>
+</table>

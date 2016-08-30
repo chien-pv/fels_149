@@ -1,6 +1,12 @@
 class Word < ActiveRecord::Base
   has_many :results, dependent: :destroy
   has_many :answers, dependent: :destroy
+  belongs_to :category
+  validates :category, presence: true
+  validates :content, presence: true
+
+  accepts_nested_attributes_for :answers,
+    reject_if: proc {|answer| answer[:content].blank?}
 
   default_scope -> {order(created_at: :desc)}
 
@@ -26,4 +32,6 @@ class Word < ActiveRecord::Base
   scope :filter_not_learn, -> user_id, check_learned do
     not_learn(user_id) if check_learned == "false"
   end
+
+  scope :search, -> q {where "content LIKE ?", "%#{q}%" if q.present?}
 end

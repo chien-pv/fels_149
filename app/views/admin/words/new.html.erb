@@ -1,0 +1,17 @@
+<%= provide :title, t("admin.words.title") %>
+<div class="row">
+  <div class="col-lg-12 padding-twenty">
+    <div class="col-lg-offset-3 col-md-6">
+      <%= form_for @word, url: admin_words_path  do |f| %>
+        <%= render "shared/error_messages", object: f.object %>
+        <%= f.label :content %>
+        <%= f.text_field :content, class: "form-control"  %>
+        <%= category_select %>
+        <%= f.fields_for :answers do |answer| %>
+           <%= render "answer", f: answer %>
+        <% end %>
+        <%= f.submit t "admin.words.create_words", class: "btn btn-info" %>
+       <% end %>
+    </div>
+  </div>
+</div>
