@@ -21,6 +21,11 @@
 
 en:
   hello: "Hello world"
+  categories:
+    index:
+      start: "Start"
+    search_form:
+      search: "Search categories"
   static_page:
     home: "Home"
     signup: "Sign up"

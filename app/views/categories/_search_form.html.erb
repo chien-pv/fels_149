@@ -1,0 +1,15 @@
+<div class="row mg-bt-10">
+  <div class="col-md-6">
+    <%= form_tag categories_path, method: :get, id: "search-form" do %>
+      <div class="input-group col-md-8">
+        <%= text_field_tag :search, params[:search],
+          class: "search-query form-control", placeholder: t(".search") %>
+        <span class="input-group-btn">
+          <%= button_tag type: "submit", class: "btn btn-danger" do %>
+            <i class="glyphicon glyphicon-search"></i>
+          <% end %>
+        </span>
+      </div>
+    <% end %>
+  </div>
+</div>
