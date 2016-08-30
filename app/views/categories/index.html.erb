@@ -1,0 +1,19 @@
+<div class="page-word-content">
+  <%= render "search_form" %>
+  <% @categories.each do |category| %>
+    <div class="panel-group">
+      <div class="panel panel-primary">
+        <div class="panel-heading">
+          <b> <%= category.name %></b>
+        </div>
+        <div class="panel-body">
+          <div class="ctegory-description"> <%= category.description %></div>
+          <div class="pull-right">
+            <button class="btn btn-danger"><%= t ".start" %></button>
+          </div>
+        </div>
+      </div>
+    </div>
+  <% end %>
+  <%= will_paginate @categories %>
+</div>
