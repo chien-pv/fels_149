@@ -21,6 +21,7 @@ gem "carrierwave",             "0.10.0"
 gem "mini_magick",             "3.8.0"
 gem "wicked_pdf"
 gem "wkhtmltopdf-binary"
+gem "simple_form"
 
 group :development, :test do
   gem "sqlite3",     "1.3.9"
