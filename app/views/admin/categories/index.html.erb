@@ -1,12 +1,12 @@
 <div class="content-page-admin">
   <h2 class="text-center"><%= t ".category" %></h2>
+  <div class="flash-massage"></div>
   <%= render "search_form" %>
-    <div class="flash-massage"></div>
     <div class="mg-bt-10 pull-right">
       <%= link_to  t(".new"), new_admin_category_path,
         class: "btn btn btn-primary" %>
     </div>
-    <table class="table table-bordered" id="table-users">
+    <table class="table table-bordered" id="table-category">
       <thead>
         <tr>
           <th><%= t ".number_order" %></th>
@@ -23,11 +23,12 @@
             <td><%= category.name %></td>
             <td><%= category.description %></td>
             <td><%= category.created_at.try(:strftime, "%m/%d/%Y") %></td>
-            <td class="text-center"><%= link_to admin_category_path(category),
-              method: :delete, remote: true,
-              data: {confirm: t(".confirm")} do %>
-                  <i class="text-danger glyphicon glyphicon-trash"> </i>
-                <% end %>
+            <td class="text-center">
+              <%= link_to edit_admin_category_path(category) do %>
+                <i class="text-primary glyphicon glyphicon-edit"> </i>
+              <% end %>
+              <a class="btn-delete-category" data-value="<%= category.id %>">
+                <i class="text-danger glyphicon glyphicon-trash"></i></a>
             </td>
           </tr>
         <% end %>
