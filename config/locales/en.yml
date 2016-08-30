@@ -26,6 +26,11 @@ en:
       start: "Start"
     search_form:
       search: "Search categories"
+  lessons:
+    create:
+      danger: "Can not create lesson"
+    show:
+      finish: "Finish"
   static_page:
     home: "Home"
     signup: "Sign up"

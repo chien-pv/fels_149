@@ -1,0 +1,17 @@
+<div class="page-word-content">
+  <div class="">
+    <h1 class="text-center">
+      <%= @lesson.category.name %>
+    </h1>
+    <%= form_for @lesson, url: "#" do |f| %>
+      <div class="result-answer">
+        <%= f.fields_for :results do |result| %>
+          <%= render "form_result", result: result %>
+        <% end %>
+      </div>
+      <div class="col-lg-1 text-center pull-right">
+        <%= f.submit t(".finish"), class: "btn btn-danger" %>
+      </div>
+    <% end %>
+  </div>
+</div>

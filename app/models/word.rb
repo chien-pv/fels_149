@@ -34,4 +34,6 @@ class Word < ActiveRecord::Base
   end
 
   scope :search, -> q {where "content LIKE ?", "%#{q}%" if q.present?}
+
+  scope :random, -> limits {order("RANDOM()").limit(limits)}
 end

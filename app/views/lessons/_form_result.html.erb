@@ -1,0 +1,20 @@
+<div class="panel-group">
+  <div class="panel panel-default">
+    <div class="panel-heading">
+      <%= result.options[:child_index] + 1 %>.
+      <b><%= result.object.word.content %></b>
+    </div>
+    <div class="panel-body">
+      <% result.object.word.answers.each do |answer| %>
+        <div class="answer-content">
+          <div class="radio-answer">
+            <%= result.radio_button :answer_id, answer.id, checked: false %>
+          </div>
+          <div class="content-answer">
+            <%= answer.content %>
+          </div>
+        </div>
+      <% end %>
+    </div>
+  </div>
+</div>
