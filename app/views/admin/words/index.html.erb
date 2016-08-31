@@ -1,5 +1,6 @@
 <div class="content-page-admin">
   <h2 class="text-center"><%= t "admin.words.title" %></h2>
+  <div class="flash-massage"></div>
   <div class="panel-group">
     <div class="panel panel-info">
       <div class="panel-heading text-center">
@@ -33,10 +34,11 @@
           <td><%= word.content %></td>
           <td><%= word.answers.correct_anwser.try(:content) %></td>
           <td>
-            <span class="text-center"><%= link_to t(".edit"),
-              admin_words_path %></span>
-            <span class="text-center"><%= link_to t(".delete"),
-              admin_words_path %></span>
+            <%= link_to edit_admin_word_path(word) do %>
+              <i class="btn btn-info btn-edit-word"><%= t(".edit") %> </i>
+            <% end %>
+            <button class="btn btn-danger btn-delete-word"
+              data-value="<%= word.id %>"><%= t(".delete") %></button>
           </td>
         </tr>
       <% end %>

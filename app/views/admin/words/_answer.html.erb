@@ -5,8 +5,12 @@
       <td><%= f.text_field :content, class: "form-control" %></td>
       <td>
         <%= f.label :correct %>
-        <%= f.radio_button :is_correct, true, value: true,
-          class: "answers" %>
+        <%= f.radio_button :is_correct, f.object.is_correct,
+          checked: f.object.is_correct, class: "answers",
+          id: "correct_answer_#{f.options[:child_index]}" %>
+        <%= hidden_field_tag "word[answers_attributes][#{f.options[
+          :child_index]}][is_correct]", f.object.is_correct,
+          class: "correct_answer_#{f.options[:child_index]}" %>
       </td>
     </tr>
 </table>
