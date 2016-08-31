@@ -1,0 +1,46 @@
+<div class="content-page-admin">
+  <h2 class="text-center"><%= t "admin.words.title" %></h2>
+  <div class="panel-group">
+    <div class="panel panel-info">
+      <div class="panel-heading text-center">
+        <%= t "word.index.filter" %>
+      </div>
+      <div class="panel-body">
+        <%= render "form_search" %>
+      </div>
+    </div>
+  </div>
+  <div>
+  <%= link_to new_admin_word_path, class: "btn btn-info btn-add-word" do %>
+    <i class="glyphicon glyphicon glyphicon-plus">
+    <%= t ".new word" %></i>
+  <% end %>
+  </div>
+
+  <table class="table table-bordered" id="table-words">
+    <thead>
+      <tr class="admin-words">
+        <th class="col-id"><%= t ".number_order" %></th>
+        <th class="col-content"><%= t ".content" %></th>
+        <th class="col-correct"><%= t ".correct" %></th>
+        <th class="col-action"><%= t ".action" %></th>
+      </tr>
+    </thead>
+    <tbody>
+      <% @words.each_with_index do |word, index| %>
+        <tr id="word-<%= word.id %>">
+          <td><%= index + 1 %></td>
+          <td><%= word.content %></td>
+          <td><%= word.answers.correct_anwser.try(:content) %></td>
+          <td>
+            <span class="text-center"><%= link_to t(".edit"),
+              admin_words_path %></span>
+            <span class="text-center"><%= link_to t(".delete"),
+              admin_words_path %></span>
+          </td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+  <%= will_paginate @words %>
+</div>

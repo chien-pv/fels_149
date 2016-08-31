@@ -117,3 +117,14 @@ en:
       destroy:
         success: "Category deleted successfully"
         danger: "Category delete errors"
+    words:
+      title: "Manager words"
+      answer: "Answer"
+      create_words: "Create words"
+      content: "Content"
+      action: "Action"
+      correct: "Correct"
+      edit: "Edit"
+      delete: "Delete"
+      all_category: "All category"
+      category: "Please select category"
