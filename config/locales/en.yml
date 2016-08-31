@@ -127,4 +127,10 @@ en:
       edit: "Edit"
       delete: "Delete"
       all_category: "All category"
-      category: "Please select category"
+      update: "Update"
+      flash:
+        category: "Please select category"
+        success: "Word create successfully"
+        delete: "Word deleted successfully"
+        update: "Word updated successfully"
+
