@@ -7,10 +7,12 @@ class Relationship < ActiveRecord::Base
   private
 
   def create_activity_follow
-    Activity.create user_id: follower_id, target_id: id, action_type: :follow
+    Activity.create user_id: follower_id, target_id: followed_id,
+      action_type: :follow
   end
 
   def create_activity_unfollow
-    Activity.create user_id: follower_id, target_id: id, action_type: :unfollow
+    Activity.create user_id: follower_id, target_id: followed_id,
+      action_type: :unfollow
   end
 end
