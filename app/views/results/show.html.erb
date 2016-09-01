@@ -1,0 +1,42 @@
+<div class="page-word-content">
+  <div class="title">
+    <center>
+      <h1 class="text-center">
+        <%= @lesson.category.name %>
+      </h1>
+    </center>
+    <%= t ".date" %>:
+    <%= l @lesson.updated_at, format: :myformat %><br>
+    <%= t ".result" %>:
+    <b class="text-danger text-corret">
+      <%= @correct_answer%>/<%= @results.count%>
+    </b>
+    <hr>
+  </div>
+  <% @results.each_with_index do |result, index| %>
+    <div class="panel-group">
+      <div class="panel panel-default">
+        <div class="panel-heading">
+          <%= index + 1 %>.
+          <b><%= result.word.content %></b>
+        </div>
+        <div class="panel-body">
+          <% result.word.answers.each do |answer| %>
+            <div class="answer-content">
+              <div class="radio-answer">
+                <%= radio_button :id_answer, result.id, answer.id,
+                  checked: result.answer_id == answer.id, disabled: true %>
+              </div>
+              <div class="content-answer">
+                <%= answer.content %>
+              </div>
+            </div>
+          <% end %>
+          <div class="col-md-12">
+            <%= label_answer result.answer.try(:is_correct) %>
+          </div>
+        </div>
+      </div>
+    </div>
+  <% end %>
+</div>
