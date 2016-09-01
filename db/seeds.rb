@@ -32,6 +32,7 @@ puts "Create Category ....."
 Category.create!(name: "Basic 200", description: Faker::Lorem.paragraph)
 Category.create!(name: "Basic 500", description: Faker::Lorem.paragraph)
 
+
 Category.create! name:"Rails"
   10.times do |n|
   name  = Faker::Name.name

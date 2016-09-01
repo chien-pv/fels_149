@@ -29,11 +29,13 @@
         </div>
         <% end %>
       </div>
-      <div class="row ">
-        <div>
-          <h1 class="border-bottom"><%= t "user.activity" %></h1>
+      <h1 class="border-bottom"><%= t "user.activity.listactivity" %></h1>
+      <% @user.activities.by_date.each do |activity|%>
+        <div class="row ">
+          <h3><%= gravatar_for @user, size: 50 %></h3>
+          <p><%= activity.load %></p>
         </div>
-      </div>
+      <% end %>
     </div>
   </div>
 </div>

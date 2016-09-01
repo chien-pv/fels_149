@@ -20,6 +20,7 @@
 # available at http://guides.rubyonrails.org/i18n.html.
 
 en:
+  formattime: "%m/%d/%Y"
   time:
     formats:
       myformat: "%m/%d/%Y"
@@ -64,7 +65,11 @@ en:
       male: "Male"
       select: "Select"
       gender_holder: "Gender"
-    activity: "Activities"
+    activity:
+      listactivity: "Activities"
+      follow: "is following"
+      unfollow: "unfollowed"
+      learned: "word in Lesson"
     word: "Word"
     lesson: "Lesson"
     update: "Update your profile"
