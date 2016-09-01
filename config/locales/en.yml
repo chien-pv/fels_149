@@ -20,7 +20,19 @@
 # available at http://guides.rubyonrails.org/i18n.html.
 
 en:
+  time:
+    formats:
+      myformat: "%m/%d/%Y"
   hello: "Hello world"
+  results:
+    show:
+      date: "Date"
+      result: "Result"
+    update:
+      fail: "Finish failed"
+    answer:
+      correct_answer: "Correct answer"
+      wrong_answer: "Wrong answer"
   categories:
     index:
       start: "Start"

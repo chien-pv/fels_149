@@ -3,7 +3,7 @@
     <h1 class="text-center">
       <%= @lesson.category.name %>
     </h1>
-    <%= form_for @lesson, url: "#" do |f| %>
+    <%= form_for @lesson, url: lesson_path(@lesson) do |f| %>
       <div class="result-answer">
         <%= f.fields_for :results do |result| %>
           <%= render "form_result", result: result %>
