@@ -4,6 +4,7 @@ class Lesson < ActiveRecord::Base
   has_many :results, dependent: :destroy
   has_many :words, through: :results
   after_create :add_words
+  after_create :create_activity_lesson
 
   accepts_nested_attributes_for :results
 
@@ -19,5 +20,9 @@ class Lesson < ActiveRecord::Base
     words.each do |word|
       Result.create word: word, lesson_id: id
     end
+  end
+
+  def create_activity_lesson
+    Activity.create user_id: user_id, target_id: id, action_type: :learned
   end
 end
