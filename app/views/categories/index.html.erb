@@ -9,7 +9,8 @@
         <div class="panel-body">
           <div class="ctegory-description"> <%= category.description %></div>
           <div class="pull-right">
-            <button class="btn btn-danger"><%= t ".start" %></button>
+            <%= link_to t(".start"), lessons_path(category_id: category),
+              method: :post, class: "btn btn-danger" %>
           </div>
         </div>
       </div>

@@ -3,4 +3,5 @@ word_colume: 3
 users_colume: 3
 colume_export: 4
 per_page_category: 5
+word_number: 10
 search_words: {learned: "true", not_learn: "false", all: ""}

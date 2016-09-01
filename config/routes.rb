@@ -7,6 +7,8 @@ Rails.application.routes.draw do
   resources :relationships, only: [:create, :destroy, :show]
   resources :sessions, only: [:new, :create, :destroy]
   resources :categories
+  resources :lessons
+  resources :results
   get "login", to: "sessions#new", as: "login"
   get "logout", to: "sessions#destroy", as: "logout"
 
