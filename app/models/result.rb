@@ -4,6 +4,6 @@ class Result < ActiveRecord::Base
   belongs_to :answer
 
   scope :count_correct_answer, -> do
-    joins(:answer).where("answers.is_correct = ?", true).count
+    joins(:answer).where("answers.is_correct = ?", true).size
   end
 end

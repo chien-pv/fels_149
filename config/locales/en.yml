@@ -40,6 +40,15 @@ en:
     search_form:
       search: "Search categories"
   lessons:
+    index:
+      title: "List lessons"
+      number_order: "No."
+      created_at: "Created at"
+      category: "Category"
+      status: "Status"
+      score: "Score"
+      complete: "Complete"
+      uncompleted: "Uncompleted"
     create:
       danger: "Can not create lesson"
     show:

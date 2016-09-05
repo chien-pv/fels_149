@@ -1,0 +1,32 @@
+<div class="content-page-admin">
+  <h2 class="text-center"><%= t ".title" %></h2>
+    <table class="table table-bordered" id="table-users">
+      <thead>
+        <tr>
+          <th><%= t ".number_order" %></th>
+          <th><%= t ".created_at" %></th>
+          <th><%= t ".category" %></th>
+          <th><%= t ".status" %></th>
+          <th><%= t ".score" %></th>
+          <th></th>
+        </tr>
+      </thead>
+      <tbody>
+        <% @lessons.each_with_index do |lesson, index| %>
+          <tr id="lesson-<%= lesson.id %>">
+            <td><%= index + 1 %></td>
+            <td><%= l lesson.created_at, format: :myformat %></td>
+            <td><%= lesson.category.name %></td>
+            <td><%= lesson.is_complete ? t(".complete") : t(".uncompleted") %></td>
+            <td><%= lesson.results.count_correct_answer%>/<%= lesson.results.size %></td>
+            <td class="text-center">
+              <%= link_to result_path(lesson) do %>
+                <i class="glyphicon glyphicon-eye-open"> </i>
+              <% end %>
+            </td>
+          </tr>
+        <% end %>
+      </tbody>
+    </table>
+  <%= will_paginate @lessons %>
+</div>

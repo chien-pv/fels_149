@@ -2,6 +2,7 @@ class LessonsController < ApplicationController
   before_action :load_lesson, only: [:show, :update]
 
   def index
+    @lessons = current_user.lessons.paginate page: params[:page]
   end
 
   def create
