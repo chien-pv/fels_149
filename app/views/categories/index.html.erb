@@ -7,7 +7,9 @@
           <b> <%= category.name %></b>
         </div>
         <div class="panel-body">
-          <div class="ctegory-description"> <%= category.description %></div>
+          <div class="category-description">
+            <%= category.description.present? ? category.description : t(".blank_description") %>
+          </div>
           <div class="pull-right">
             <%= link_to t(".start"), lessons_path(category_id: category),
               method: :post, class: "btn btn-danger" %>

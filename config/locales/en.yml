@@ -37,8 +37,11 @@ en:
   categories:
     index:
       start: "Start"
+      blank_description: "Please click on Start to begin the lesson"
     search_form:
       search: "Search categories"
+    words:
+      blank: "Category have not data."
   lessons:
     index:
       title: "List lessons"
