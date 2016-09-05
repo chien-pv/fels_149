@@ -61,8 +61,10 @@
               <ul class="dropdown-menu">
                 <li><%= link_to t("static_page.profile"), current_user %></li>
                 <li class="divider"></li>
-                <li><%= link_to t("static_page.settings"), edit_user_path(current_user) %>
+                <li><%= link_to t("static_page.settings"),
+                  edit_user_path(current_user) %>
                 </li>
+                <li><%= link_to t(".list_lesson"), lessons_path %></li>
               </ul>
             </span>
           <% else %>
