@@ -16,17 +16,18 @@
       <div class="row">
         <% if current_user? @user %>
           <div class="col-md-6">
-            <%= link_to "#", class: "btn btn-info btn-lg btn-user " do %>
+            <%= link_to words_path, class: "btn btn-info btn-lg btn-user" do %>
               <i class="glyphicon glyphicon-hand-up">
               <%= t "user.word" %></i>
             <% end %>
           </div>
           <div class="col-md-6">
-          <%= link_to "#", class: "btn btn-info btn-lg btn-user " do %>
-            <i class="glyphicon glyphicon-hand-up">
-            <%= t "user.lesson" %></i>
-          <% end %>
-        </div>
+            <%= link_to categories_path, class: "btn btn-info btn-lg
+              btn-user " do %>
+              <i class="glyphicon glyphicon-hand-up">
+              <%= t "user.lesson" %></i>
+            <% end %>
+          </div>
         <% end %>
       </div>
       <h1 class="border-bottom"><%= t "user.activity.listactivity" %></h1>

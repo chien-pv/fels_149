@@ -96,6 +96,9 @@ en:
     new:
       login: "Log In"
     login_fail: "Email or password is invalid."
+    form_new:
+      email: "E-mail"
+      password: "passwords"
   word:
     index:
       title: "List Word"

@@ -16,7 +16,7 @@ class LessonsController < ApplicationController
   end
 
   def update
-    if @lesson.update lesson_params
+    if @lesson.update lesson_params.merge is_complete: true
       redirect_to result_path @lesson
     else
       flash[:danger] = t "results.update.fail"

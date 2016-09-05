@@ -9,7 +9,7 @@
           <span class="icon-bar"></span>
           <span class="icon-bar"></span>
         </button>
-        <span><img alt="Icon" src="/assets/Framgia_icon.png"/></span>
+        <%= link_to image_tag("Framgia_icon.png"), root_path %>
         <%= link_to t("static_page.elearning"), root_path,
           class: "bar-brand" %>
       </div>
@@ -27,7 +27,8 @@
                   <%= link_to t("static_page.users"), admin_users_path %>
                 </li>
                 <li>
-                  <%= link_to t("static_page.category"), "#" %>
+                  <%= link_to t("static_page.category"),
+                    admin_categories_path %>
                 </li>
                 <li>
                   <%= link_to t("static_page.word"), admin_words_path %>

@@ -8,7 +8,7 @@
     </div>
     <% Settings.search_words.each do |key, check_learned| %>
       <div class="col-md-3">
-        <div class="col-md-2">
+        <div class="col-md-3">
           <%= radio_button_tag :check_learned, check_learned,
             params[:check_learned] == check_learned %>
         </div>
