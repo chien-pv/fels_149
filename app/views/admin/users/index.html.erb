@@ -21,7 +21,7 @@
             <td><%= user.name %></td>
             <td><%= user.email %></td>
             <td><%= user.phone %></td>
-            <td><%= user.gender %></td>
+            <td><%= user.gender ? t(".female") : t(".male") %></td>
             <td><%= user.avatar %></td>
             <td class="text-center"><%= link_to admin_user_path(user),
               method: :delete, remote: true,
