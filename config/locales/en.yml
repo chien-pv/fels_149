@@ -66,6 +66,7 @@ en:
     settings: "Settings"
     profile: "Profile"
     all_user: "users"
+    list_lesson: "List lessons"
   user:
     signup: "Create my account"
     passconfir: "Confirm your password"

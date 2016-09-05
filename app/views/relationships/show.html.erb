@@ -1,16 +1,12 @@
 <% provide(:title, @title) %>
-<div class="container">
-  <div class="col-md-3 user-info">
-      <div class="row">
-        <%= gravatar_for @user %>
-        <h3><%= @user.name %></h3>
-        <span><%= link_to t("user.view_profile"), @user %></span>
-      </div>
-      <div class="row">
-        <section class="stats">
-        <%= render "shared/stats" %>
-      </section>
-      </div>
+<div class="content-page-user">
+  <div class="row">
+    <div class="col-md-6">
+      <%= gravatar_for @user, size: 120 %>
+      <h3><%= @user.name %></h3>
+      <span><%= link_to t("user.view_profile"), @user %></span>
+      <%= render "shared/stats" %>
+    </div>
   </div>
   <div class="col-md-12">
     <h3><%= @title %></h3>
